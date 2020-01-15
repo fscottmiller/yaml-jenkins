@@ -1,0 +1,17 @@
+variables:
+  foo: bar
+
+jobs:
+  Build:
+    displayName: Build # defaults to key of job
+    description: This builds my app. # defaults to nothing
+    steps:
+    - name: Unit Test
+      image: golang
+      version: latest # defaults to latest
+      command: go test
+    - name: Compile Application
+      image: golang
+      command: go build -o bin/hello
+    - name: Push Package
+      command: echo $(ls -la bin)
