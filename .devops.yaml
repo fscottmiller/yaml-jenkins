@@ -2,7 +2,7 @@ variables:
   foo: bar
 
 jobs:
-  Build:
+  - name: Build
     displayName: Build # defaults to key of job
     description: This builds my app. # defaults to nothing
     steps:
